@@ -7,6 +7,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @NoArgsConstructor
@@ -30,6 +31,25 @@ public class FacturaService {
         System.out.println("Mostrar elementos por id: ");
         Mono.just(listaProducto.stream().filter(producto -> producto.getIdFactura() == 2).collect(Collectors.toList()))
                 .subscribe(p -> log.info(p.toString()));
+    }
+
+    // filtrar por nombre
+    public static void filtrarPorNombre(){
+        System.out.println("Filtrar por nombre: ");
+        Mono.just(listaProducto.stream().filter(producto -> Objects.equals(producto.getNombreProducto(), "Pantalla")).collect(Collectors.toList()))
+                .subscribe(p -> log.info(p.toString()));
+    }
+
+    // filtrar por fecha mayor al 2019
+    public static  void filtrarPorFecha(){
+        System.out.println("Filtrar por fecha mayor al 2019: ");
+        Flux.fromIterable(listaProducto.stream().filter(producto -> producto.getFecha().isAfter(new MyDate("2019-12-31"))).collect(Collectors.toList()))
+                .subscribe(p -> log.info(p.toString()));
+    }
+
+    // multiplicar precio por 2
+    public static void multiplicarPorDos(){
+        System.out.println("Multiplicar precio por 2: ");
     }
 
 }

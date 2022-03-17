@@ -23,6 +23,8 @@ public class FacturaReactivaApplication implements CommandLineRunner {
 		// mostrar lista
 		FacturaService.mostrarListaProductos();
 		FacturaService.mostrarPorId();
+		FacturaService.filtrarPorNombre();
+		FacturaService.filtrarPorFecha();
 
 	}
 
