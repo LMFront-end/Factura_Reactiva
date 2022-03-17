@@ -23,5 +23,8 @@ public class FacturaService {
 
     }
 
-    //
+    //mostrar elemento por id
+    public static void mostrarPorId(){
+        
+    }
 }
