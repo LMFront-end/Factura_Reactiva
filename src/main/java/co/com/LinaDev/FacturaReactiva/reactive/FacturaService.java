@@ -4,8 +4,10 @@ import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @NoArgsConstructor
 public class FacturaService {
@@ -25,6 +27,9 @@ public class FacturaService {
 
     //mostrar elemento por id
     public static void mostrarPorId(){
-        
+        System.out.println("Mostrar elementos por id: ");
+        Mono.just(listaProducto.stream().filter(producto -> producto.getIdFactura() == 2).collect(Collectors.toList()))
+                .subscribe(p -> log.info(p.toString()));
     }
+
 }

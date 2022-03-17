@@ -22,6 +22,7 @@ public class FacturaReactivaApplication implements CommandLineRunner {
 		// se prueban los codigos
 		// mostrar lista
 		FacturaService.mostrarListaProductos();
+		FacturaService.mostrarPorId();
 
 	}
 
