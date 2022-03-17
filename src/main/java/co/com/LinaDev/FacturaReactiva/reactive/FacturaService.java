@@ -64,4 +64,18 @@ public class FacturaService {
                 .subscribe(p -> log.info(p.toString()));
     }
 
+    // filtrar por precio
+    public static void filtrarPrecio(){
+        System.out.println("Filtrar por precio: ");
+        Mono.just(listaProducto.stream().filter(producto -> producto.getPrecio() > 300).collect(Collectors.toList()))
+                .subscribe(p -> log.info(p.toString()));
+    }
+
+    // mostrar el primer elemento mayor a $300
+    public static void mostrarValor(){
+        System.out.println("mostrar el primer elemento mayor a 300: ");
+        Mono.just(listaProducto.stream().filter(producto -> producto.getPrecio() > 300).collect(Collectors.toList()))
+                .subscribe(p -> log.info(p.toString()));
+    }
+
 }

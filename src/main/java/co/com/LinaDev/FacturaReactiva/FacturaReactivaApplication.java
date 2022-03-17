@@ -32,7 +32,10 @@ public class FacturaReactivaApplication implements CommandLineRunner {
 		FacturaService.filtrarFechaMenor();
 		// multiplicar precio por 2
 		FacturaService.multiplicarPorDos();
-
+		// filtrar por precio
+		FacturaService.filtrarPrecio();
+		// mostrar el primer elemento mayor a $300
+		FacturaService.mostrarValor();
 	}
 
 }
