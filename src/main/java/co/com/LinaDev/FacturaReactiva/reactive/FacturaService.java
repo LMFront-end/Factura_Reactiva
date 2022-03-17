@@ -50,6 +50,11 @@ public class FacturaService {
     // multiplicar precio por 2
     public static void multiplicarPorDos(){
         System.out.println("Multiplicar precio por 2: ");
+        Flux.fromIterable(listaProducto.stream().map(producto -> {
+            producto.setPrecio(producto.getPrecio() * 2);
+            return producto;
+        }).collect(Collectors.toList()))
+                .subscribe(p -> log.info(p.toString()));
     }
 
 }

@@ -25,6 +25,7 @@ public class FacturaReactivaApplication implements CommandLineRunner {
 		FacturaService.mostrarPorId();
 		FacturaService.filtrarPorNombre();
 		FacturaService.filtrarPorFecha();
+		FacturaService.multiplicarPorDos();
 
 	}
 
