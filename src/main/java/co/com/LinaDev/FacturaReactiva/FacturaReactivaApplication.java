@@ -19,12 +19,18 @@ public class FacturaReactivaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// se prueban los codigos
-		// mostrar lista
+
+		// mostrar lista de todos los productos
 		FacturaService.mostrarListaProductos();
+		// mostrar elemento por id
 		FacturaService.mostrarPorId();
+		// filtrar por nombre
 		FacturaService.filtrarPorNombre();
+		// filtrar por fecha mayor al 2019
 		FacturaService.filtrarPorFecha();
+		// filtrar por fecha menor al 2018
+		FacturaService.filtrarFechaMenor();
+		// multiplicar precio por 2
 		FacturaService.multiplicarPorDos();
 
 	}

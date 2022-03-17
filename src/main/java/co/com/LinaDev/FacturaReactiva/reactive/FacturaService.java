@@ -47,6 +47,13 @@ public class FacturaService {
                 .subscribe(p -> log.info(p.toString()));
     }
 
+    // filtrar por fecha menor al 2018
+    public static  void filtrarFechaMenor(){
+        System.out.println("Filtrar por fecha menor al 2018: ");
+        Flux.fromIterable(listaProducto.stream().filter(producto -> producto.getFecha().isAfter(new MyDate("2018-12-31"))).collect(Collectors.toList()))
+                .subscribe(p -> log.info(p.toString()));
+    }
+
     // multiplicar precio por 2
     public static void multiplicarPorDos(){
         System.out.println("Multiplicar precio por 2: ");
